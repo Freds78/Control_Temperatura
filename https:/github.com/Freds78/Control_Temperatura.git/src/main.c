@@ -19,7 +19,7 @@ int main( void )
 
    /* Configurar PWM */
    pwmConfig( 0, PWM_ENABLE );
-   pwmConfig( PWM7, PWM_ENABLE_OUTPUT );
+   pwmConfig( PWM0, PWM_ENABLE_OUTPUT );
 
 
    // SPI configuration
@@ -45,7 +45,7 @@ int main( void )
 
    conection_t com;
 
-  //sensorInit(&com);
+   sensorInit(&com);
 
    // ----- Repeat for ever -------------------------
    while( TRUE ) {

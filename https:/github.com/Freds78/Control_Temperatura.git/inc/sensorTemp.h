@@ -29,21 +29,17 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
+typedef enum{
+	INITIALIZATION,
+	SKIPROMCOM,
+	CONVERTTEMP,
+	READSCRAT
+}RomFun_Comm_t;
 
 typedef struct{
-	delay_t contador; // delay para temporizar cambios
-	char bufferRegistre[100];
-	uint8_t Byteread;
-	uint8_t Bytesend;
-	uint8_t Bitread;
-	uint8_t Bitsend;
-	uint8_t scratchpad[9][8];
-	uint8_t rom_data[8][8];
-	uint8_t TH;
-	uint8_t TL;
-	uint8_t Conf_Register;
-	uint8_t cont;
-	float answer;
+	RomFun_Comm_t mode;
+	delay_t delay;
+	uint8_t contador;
 }conection_t;
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
